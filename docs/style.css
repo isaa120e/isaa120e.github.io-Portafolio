@@ -1,204 +1,147 @@
 :root {
-    --primary-pink: #ffdae9;
-    --dark-pink: #ff85a1;
-    --soft-lilac: #e2d1f9;
-    --cream: #fff9f0;
-    --text-color: #5d576b;
+    --bg-color: #f0f4ff;
+    --accent-soft: #c3a6ff;
+    --accent-blue: #a2d2ff;
+    --text-main: #4a4e69;
+    --glass: rgba(255, 255, 255, 0.6);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none; /* Escondemos el cursor real para usar el custom */
+    cursor: none;
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: var(--cream);
-    color: var(--text-color);
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    font-family: 'Comfortaa', cursive;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1f9 100%);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
-/* Cursor Personalizado */
-#custom-cursor {
-    width: 20px;
-    height: 20px;
-    background: var(--dark-pink);
+/* Cursor Mágico */
+#cursor-glow {
+    width: 25px;
+    height: 25px;
+    background: var(--accent-soft);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease;
-    box-shadow: 0 0 10px rgba(255, 133, 161, 0.5);
+    mix-blend-mode: multiply;
+    transition: transform 0.15s ease-out;
+    box-shadow: 0 0 15px var(--accent-soft);
 }
 
-/* Header */
-header {
-    padding: 20px 50px;
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-nav {
+/* Glassmorphism Nav */
+.glass-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 10%;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
 }
 
 .logo {
-    font-size: 1.5rem;
     font-weight: bold;
-    color: var(--dark-pink);
+    font-size: 1.4rem;
+    color: var(--accent-soft);
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: var(--dark-pink);
-}
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { text-decoration: none; color: var(--text-main); font-weight: bold; }
 
 /* Hero Section */
 .hero {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(180deg, #ffffff 0%, var(--primary-pink) 100%);
+    padding: 0 20px;
 }
 
-.avatar-container {
-    width: 150px;
-    height: 150px;
-    background: white;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    border: 5px solid var(--dark-pink);
-    overflow: hidden;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.highlight {
-    color: var(--dark-pink);
-}
-
-/* Cards */
-.section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: white;
-    padding: 40px;
-    border-radius: 30px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: var(--primary-pink);
-    box-shadow: 0 15px 30px rgba(255, 133, 161, 0.2);
-}
-
-.card-emoji {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-/* Buttons */
-.btn-primary, .btn-secondary {
-    padding: 15px 35px;
-    border-radius: 50px;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: var(--dark-pink);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #ff5c8a;
-    transform: scale(1.1);
-}
-
-.contact-box {
-    background: var(--soft-lilac);
-    padding: 60px;
+.hero-card {
+    background: var(--glass);
+    padding: 50px;
     border-radius: 40px;
     text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    border: 1px solid white;
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 0.9rem;
-    opacity: 0.7;
+.profile-wrapper {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    background: white;
+    border-radius: 40px;
+    transform: rotate(-5deg);
+    transition: 0.4s;
+    border: 3px solid var(--accent-blue);
+    overflow: hidden;
 }
 
-/* Estilo para las burbujas de JS */
-.bubble {
+.hero-card:hover .profile-wrapper {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #c3a6ff, #a2d2ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tags span {
+    display: inline-block;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 10px 5px;
+    border: 1px solid var(--accent-blue);
+}
+
+/* Bento Grid */
+.container { padding: 80px 10%; }
+.title { text-align: center; margin-bottom: 40px; }
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.bento-item {
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.bento-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(195, 166, 255, 0.2);
+}
+
+.icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+
+/* Estrellas decorativas */
+.star {
     position: absolute;
-    background: var(--dark-pink);
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.6;
-    animation: bubbleUp 1s ease-out forwards;
+    background: white;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 1s infinite alternate;
 }
 
-@keyframes bubbleUp {
-    to {
-        transform: translateY(-50px) scale(1.5);
-        opacity: 0;
-    }
+@keyframes twinkle {
+    from { opacity: 0.3; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.2); }
 }
