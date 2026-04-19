@@ -1,14 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
+    <title>Mi Portafolio Mágico ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Portafolio | conoce mi experiencia</h1>
+
+    <div id="custom-cursor"></div>
+
+    <header class="animate__animated animate__fadeInDown">
+        <nav>
+            <div class="logo">Koffii ✨</div>
+            <ul>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-    
+
+    <section class="hero">
+        <div class="hero-content animate__animated animate__zoomIn">
+            <div class="avatar-container">
+                <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Lucky" alt="Avatar" class="avatar">
+            </div>
+            <h1>¡Hola, soy <span class="highlight">Koffii</span>! 🎀</h1>
+            <p>Estudiante & Creativa visual. Me encanta crear cosas lindas y funcionales.</p>
+            <button class="btn-primary" onclick="sparkleEffect()">¡Salúdame! ✨</button>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Mis Creaciones ☁️</h2>
+        <div class="grid">
+            <div class="card animate__animated animate__fadeInUp">
+                <div class="card-emoji">🎨</div>
+                <h3>Diseño Visual</h3>
+                <p>Exploración de color y estética chibi.</p>
+            </div>
+            <div class="card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="card-emoji">⚡</div>
+                <h3>Física & Ciencia</h3>
+                <p>Proyectos de electromagnetismo y energía.</p>
+            </div>
+            <div class="card animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <div class="card-emoji">🛡️</div>
+                <h3>Ciberseguridad</h3>
+                <p>Aprendiendo a proteger el mundo digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-box">
+            <h2>¿Trabajamos juntos? ✨</h2>
+            <p>Envíame un mensajito y hagamos algo increíble.</p>
+            <a href="mailto:hola@ejemplo.com" class="btn-secondary">Enviar Correo 💌</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Hecho con 💖 por Koffii | 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
